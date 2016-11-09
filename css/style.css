@@ -1,0 +1,437 @@
+
+/*************************
+Base Styles
+*************************/
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Helvetica Neue, Arial;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header-container {
+	border-bottom: 20px solid #000066;
+}
+
+.footer-container,
+.main aside {
+	border-top: 20px solid #000066
+}
+
+.header-container,
+.footer-container,
+.main aside {
+
+	background: #3366cc;
+}
+
+.title {
+	color: yellow; 
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 10px;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+	background: #000066
+}
+
+nav a:hover,
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  padding: 30px 0;
+}
+
+.main article h1 {
+  font-size: 2em;
+}
+
+.main aside {
+  color: white;
+  padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+  color: white;
+  padding: 20px 0;
+}
+#searchIcon, #avatar {
+		width: 50%;
+		border-radius: 50%;
+		margin: 0 25% 0 25%;
+}
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#hidden {
+	display: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.center  form{
+	text-align: center;
+	margin: 0 auto; 
+}
+
+/*************************
+Styls for full_Catalog
+*************************/
+.full_Catalog ul.items li {
+    display: inline-block;
+    list-style: none;
+    width: 204px;
+    text-align: center;
+    padding: 14px;
+    margin: 0 0 17px 17px;
+    position: relative;
+    left: -17px;
+	
+}
+.full_Catalog ul.items li a:hover:after {
+    content: '+';
+    font-size: 50px; position: absolute; top:35px; right:30px; color: #3888c2; vertical-align: top;
+}
+.full_Catalog ul.items li a {
+    background: white;
+    display: block;
+    padding: 30px 0 10px;
+    text-decoration: none;
+}
+.details-button {
+  color: #888;
+}
+.full_Catalog ul.items li a:hover {
+    opacity: 1;
+    color: #666;
+}
+.full_Catalog ul.items li img {
+    width: 150px;
+
+}
+.full_Catalog ul.items li p {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+}
+
+
+/*************************
+Styls for media-picture
+*************************/
+.media-picture {
+    float: left;
+    width: 400px;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    padding: 14px;
+    background: #f0eeed;
+}
+.media-picture span {
+    background: white;
+    display: block;
+    width: 100%;
+    padding: 36px 0 61px;
+}
+.media-picture img {width: 292px;}
+
+.media-details {
+    width: 460px;
+    float: right;
+}
+.media-details form {
+    margin-left: 0;
+}
+
+/*
+ * Remove most spacing between table cells.
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+}
+  table th {
+    padding-right: 40px;
+  }
+
+  
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/*
+ * Corrects margin displayed oddly in IE6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9.
+ * 2. Corrects text not wrapping in FF3.
+ * 3. Corrects alignment displayed oddly in IE6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/*
+ * Addresses FF3/4 setting `line-height` on `input` using `!important` in the
+ * UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9.
+ * 2. Removes excess padding in IE8/9.
+ * 3. Removes excess padding in IE7.
+ *    Known issue: excess padding remains in IE6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in S5, Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in S5, Chrome (include `-moz`
+ *    to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in S5, Chrome on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in FF3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+
+
+
+
+/*************************
+Media Queries
+*************************/
+
+@media only screen and (min-width: 480px) {
+
+  nav a {
+	float: left;
+	width: 30%;
+	margin: 0 0 0 5%;
+	padding: 25px 1%;
+	margin-bottom: 0;
+  }
+
+  nav li:first-child a {
+	margin-left: 0;
+  }
+
+  nav li:last-child a {
+	margin-right: 0;
+  }
+
+}
+
+@media only screen and (min-width: 768px),
+	   only screen and (min-width: 700px) and (orientation: landscape) {
+
+  .title {
+	float: left;
+	font-size: 1.4em;
+  }
+
+  nav {
+	float: right;
+	width: 60%;
+  }
+
+  nav a {
+	padding: 15px 1%;
+  }
+
+  .main article {
+	float: left;
+	width: 57%;
+  }
+
+  .main aside {
+	float: right;
+	width: 38%;
+  }
+  
+}
+
+@media only screen and (min-width: 1140px) {
+
+  .wrapper {
+	width: 1026px;
+	margin: 0 auto;
+  }
+
+  .title {
+	font-size: 2em;
+  }
+
+  nav a {
+	padding: 25px 1%;
+  }
+  
+}
+
+
+/*************************
+Clearfix
+*************************/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
