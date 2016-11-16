@@ -118,3 +118,19 @@ function insert_one_record($add) {
     }
      return "Database updated. Thank you for your input.";
 }
+
+
+function delete_one_record($id) {
+    include("connection.php");
+
+    try {
+		$delete = $db->prepare("DELETE FROM gift_detail 
+								WHERE `id` = :id_to_delete");
+
+		$delete->execute( array( ":id_to_delete" => $id ) );
+    } catch (Exception $e) {
+       return "Unable to delete the record";
+       exit;
+    }
+     return "One item has been deleted from our catalog.";
+}

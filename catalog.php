@@ -47,3 +47,7 @@ include("inc/header.php"); ?>
 		</ul>
 	</div>
 </header>
+
+<?php
+include("inc/footer.php");;
+?>
