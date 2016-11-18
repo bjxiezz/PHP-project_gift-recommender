@@ -134,3 +134,17 @@ function delete_one_record($id) {
     }
      return "One item has been deleted from our catalog.";
 }
+
+function update_one_record($add) {
+    include("connection.php");
+
+    try {
+		$insert = $db->prepare("INSERT INTO gift_detail(name, price,boy, girl, age_low,age_high, description, img) VALUES(:name,:price,:boy,:girl,:age_low,:age_high,:description, :img)");
+
+		$insert->execute($add);
+    } catch (Exception $e) {
+       return "Unable to insert the record";
+       exit;
+    }
+     return "Database updated. Thank you for your input.";
+}

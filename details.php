@@ -59,11 +59,16 @@ include("inc/header.php"); ?>
                     <td><?php echo $item["description"]; ?></td>
                 </tr>
                    
-            </table><br><br><br><br><br>
+            </table><br><br><br>
 			</form>
 		<form form method="get" class = "center" action="deleted.php">
 			<input type="hidden" name="id" value="<?php echo $id; ?>" />
 			<input type="submit" value="Delete this item from our catalog"/>
+        </form><br><br>
+		
+		<form form method="get" class = "center" action="edit.php">
+			<input type="hidden" name="id" value="<?php echo $id; ?>" />
+			<input type="submit" value="    Modify  details  of  this  item    "/>
         </form>
         </div>
     
