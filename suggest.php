@@ -20,13 +20,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $img = trim(filter_input(INPUT_POST,"img",FILTER_SANITIZE_URL, FILTER_FLAG_QUERY_REQUIRED));
    
    
+    //setting gender 
 	if (isset($gender)){
-		switch ($gender){
-			case 0: $girl = 1;
-			case 1: $boy = 1;
-			case 2: $girl = 1;$boy = 1;			
-		}		
+		$girl = 0; $boy = 0;
+		if ($gender == 0) {
+			$girl = 1; $boy = 0;
+		} else if ($gender == 1){
+			$girl = 0; $boy = 1;
+		} else if ($gender == 2){
+			$girl = 1; $boy = 1;
+		}
 	}
+
 	
 	$add = array (
 		"name" => $name,
@@ -59,7 +64,7 @@ include("inc/header.php");
 		<?php echo $message?>
 		
 		</form>
-		<form method="post" action="suggest.php">
+		<form <?php if ($message =="Database updated. Thank you for your input.") {echo "style='display:none'";}?> method="post" action="suggest.php">
 		<table>
             <tr>
 			<th><label for="name">Name:</label></th>
@@ -94,13 +99,13 @@ include("inc/header.php");
 				
 			<tr>
 			<th><label for="description">Description</label></th>
-                <td><textarea name="description" id="description">
-				</textarea>	</td>
+                <td><textarea name="description" id="description"></textarea>
+				</td>
 				
 			<tr>
 			<th><label for="img">Imagine address</label></th>
-                <td><textarea name="img" id="img">
-				</textarea>	</td>
+                <td><textarea name="img" id="img"></textarea>
+				</td>
 			</tr>
 			
 			</table>

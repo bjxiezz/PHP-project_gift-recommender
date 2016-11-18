@@ -8,7 +8,7 @@ This project sets up a website which recommands gifts for a kid based on the age
 
 (2) The "All items": Browsing all items in the database.
  
-(3) Item pages: Both "Recommandation" and "All items" link to individual item pages that list all the information of a item in the database after that specific item is clicked. In addition, the item can be deleted from database in the item page.
+(3) Item pages: Both "Recommandation" and "All items" link to individual item pages that list all the information of a item in the database after that specific item is clicked. In addition, the item can be deleted or edited in the item page.
 
 (4) The "Suggestion" page: Allowing addition of items into the database. Also, contact information is listed in a separated panel.
 

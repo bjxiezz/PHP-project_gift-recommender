@@ -135,15 +135,24 @@ function delete_one_record($id) {
      return "One item has been deleted from our catalog.";
 }
 
-function update_one_record($add) {
+function update_one_record($update) {
     include("connection.php");
 
     try {
-		$insert = $db->prepare("INSERT INTO gift_detail(name, price,boy, girl, age_low,age_high, description, img) VALUES(:name,:price,:boy,:girl,:age_low,:age_high,:description, :img)");
+		$modify = $db->prepare("UPDATE `gift_detail` SET 
+		`name` = '$update[name]' , 
+		`price` = '$update[price]', 
+		`boy` = '$update[boy]', 
+		`girl` = '$update[girl]', 
+		`age_low` = '$update[age_low]', 
+		`age_high` = '$update[age_high]', 
+		`description` = '$update[description]', 
+		`img` = '$update[img]' 
+		WHERE `gift_detail`.`id` = '$update[id]'");
 
-		$insert->execute($add);
+		$modify->execute();
     } catch (Exception $e) {
-       return "Unable to insert the record";
+       return "Unable to modify the record";
        exit;
     }
      return "Database updated. Thank you for your input.";

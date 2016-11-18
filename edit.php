@@ -17,7 +17,7 @@ if (isset($_GET["id"])) {
 		$gender_case = 2;
 	}
 }
-//var_dump ($item);
+//echo "gender_case=". $gender_case;
 
 
 
@@ -33,16 +33,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$description = trim(filter_input(INPUT_POST,"description",FILTER_SANITIZE_SPECIAL_CHARS));
     $img = trim(filter_input(INPUT_POST,"img",FILTER_SANITIZE_URL, FILTER_FLAG_QUERY_REQUIRED));
    
-   
+    //setting gender 
 	if (isset($gender)){
-		switch ($gender){
-			case 0: $girl = 1;
-			case 1: $boy = 1;
-			case 2: $girl = 1;$boy = 1;			
-		}		
+		$girl = 0; $boy = 0;
+		if ($gender == 0) {
+			$girl = 1; $boy = 0;
+		} else if ($gender == 1){
+			$girl = 0; $boy = 1;
+		} else if ($gender == 2){
+			$girl = 1; $boy = 1;
+		}
 	}
 	
+	
 	$update = array (
+		"id" => $id,
 		"name" => $name,
 		"price" => $price,
 		"boy" => $boy,
@@ -55,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($name == "" || $price == "" || $gender == "" || $age_low == "") {
         $message = "Please fill in the required fields.";
     } else {		
-		$message = delete_one_record($id);
 		$message = update_one_record($update);		
 	}  
 }
@@ -109,15 +113,11 @@ include("inc/header.php");
 				
 			<tr>
 			<th><label for="description">Description</label></th>
-                <td><textarea name="description" id="description" rows="7" cols="26" >
-				<?php  echo $item["description"]?>
-				</textarea>	</td>
+                <td><textarea name="description" id="description" rows="7" cols="26" ><?php  echo $item["description"]?></textarea>	</td>
 				
 			<tr>
 			<th><label for="img">Imagine address</label></th>
-                <td><textarea name="img" id="img" rows="5" cols="26" > 
-				<?php  echo $item["img"]?>
-				</textarea>	</td>
+                <td><textarea name="img" id="img" rows="5" cols="26" ><?php  echo $item["img"]?></textarea>	</td>
 			</tr>
 			
 			</table>
